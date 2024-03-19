@@ -1,0 +1,19 @@
+{
+    "name": "amirhossein256/zibal",
+    "description": "????? ????? ???? ??????? ?????",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Amirhossein256\\Zibal\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AmirHossein Najarbshi",
+            "email": "amir.hossen.nb@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
