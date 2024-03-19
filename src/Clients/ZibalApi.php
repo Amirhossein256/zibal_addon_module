@@ -8,6 +8,11 @@ use GuzzleHttp\Exception\GuzzleException;
 class ZibalApi extends AbstractApiClient
 {
 
+    public function __construct($accessToken)
+    {
+        parent::__construct($accessToken);
+    }
+
     /**
      * @param $national_code
      * @param $mobile

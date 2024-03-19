@@ -1,6 +1,6 @@
 <?php
 
-function zibal_output()
+function zibal_output($vars)
 {
 
 }
@@ -19,6 +19,14 @@ function zibal_config()
         "version" => '1.0',
         "author" => "<a href='https://t.me/Amirhossein_nb'>amirhossein_nb</a>",
         "language" => "farsi",
+        "fields" => [
+            'accessToken' => [
+                "FriendlyName" => 'توکن زیبال',
+                "Type" => "text",
+                "Size" => "200",
+                "Default" => ""
+            ]
+        ]
     ];
 
 }

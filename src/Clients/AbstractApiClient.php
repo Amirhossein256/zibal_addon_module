@@ -9,12 +9,15 @@ abstract class AbstractApiClient
 {
     protected $client;
 
-    public function __construct()
+    public function __construct($accessToken)
     {
         $this->client = new Client([
             'verify'   => true,
             'base_uri' => 'https://api.zibal.ir/v1/facility',
             'timeout'  => 5.0,
+            'headers'  => [
+                'Authorization' => 'Bearer ' . $accessToken, // Ensure $accessToken contains your actual access token
+            ],
         ]);
     }
 
