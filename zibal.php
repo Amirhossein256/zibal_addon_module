@@ -2,7 +2,7 @@
 
 function zibal_output($vars)
 {
-
+    include __DIR__  . '/src/router/loader.php';
 }
 
 function zibal_clientarea()
