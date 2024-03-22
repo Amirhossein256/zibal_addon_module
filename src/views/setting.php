@@ -2,7 +2,7 @@
 <h1 style="direction: rtl"> تنظیمات ماژول احراز هویت</h1>
 <hr>
 <form style="direction: rtl" class="" method="post"
-      action="addonmodules.php?module=zibal&action=zibal/settingUpdate">
+      action="addonmodules.php?module=zibal&action=zibal/setting">
 
     <div class="row">
         <div class="col-md-9">
@@ -10,12 +10,12 @@
 
             <div class="form-check form-check-inline">
                 <input <?php  if($setting['AfterLogin'] == 'on') { echo 'checked';}?> class="form-check-input" type="radio" name="AfterLogin" value="on">
-                <label class="form-check-label" for="inlineRadio1">فعال</label>
+                <label class="form-check-label">فعال</label>
             </div>
 
             <div class="form-check form-check-inline">
                 <input <?php  if($setting['BeforeRegister'] == 'on') { echo 'checked';}?> class="form-check-input" type="radio" name="BeforeRegister" value="on">
-                <label class="form-check-label" for="inlineRadio1">فعال</label>
+                <label class="form-check-label">فعال</label>
             </div>
             </div>
 
@@ -23,11 +23,11 @@
 
                 <div class="form-check form-check-inline">
                     <input <?php  if($setting['AfterLogin'] == 'off') { echo 'checked';}?> class="form-check-input" type="radio" name="AfterLogin" value="off">
-                    <label class="form-check-label" for="inlineRadio2">غیر فعال</label>
+                    <label class="form-check-label">غیر فعال</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input <?php  if($setting['AfterLogin'] == 'off') { echo 'checked';}?> class="form-check-input" type="radio" name="BeforeRegister" value="off">
-                    <label class="form-check-label" for="inlineRadio2">غیر فعال</label>
+                    <input <?php  if($setting['BeforeRegister'] == 'off') { echo 'checked';}?> class="form-check-input" type="radio" name="BeforeRegister" value="off">
+                    <label class="form-check-label">غیر فعال</label>
                 </div>
             </div>
 

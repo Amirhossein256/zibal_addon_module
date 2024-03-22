@@ -1,1 +1,1 @@
-<h1>hello</h1>
+<a href="addonmodules.php?module=zibal&action=zibal/setting"> تنظیمات</a>
