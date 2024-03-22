@@ -13,7 +13,6 @@ class mainController
         }
         if ($var)
             extract($var);
-//        global $var;
         require_once $file;
     }
 
