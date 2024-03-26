@@ -6,17 +6,16 @@
                 <p class="text-center">با توجه به اینکه احراز هویت الزامی میباشد لطفا ابتدا احراز هویت نماید</p>
                 <form action="index.php?m=zibal&a=authentication/authenticate" method="post">
                     <div class="form-group">
-                        <label class="text-right" for="mobile">شماره تماس</label>
-                        <input type="text" class="form-control" id="mobile" name="mobile" required>
-                    </div>
-                    <div class="form-group">
                         <label class="text-right" for="national_id">کد ملی</label>
                         <input type="text" class="form-control" id="national_id" name="national_id" required>
                     </div>
+                    {if $vars.birthday}
                     <div class="form-group">
                         <label class="text-right" for="birthdate">تاریخ تولد</label>
                         <input type="date" class="form-control" id="birthdate" name="birthdate" required>
                     </div>
+                    {/if}
+                    <input value="{{$vars['phone_number']}}" type="hidden" class="form-control" id="mobile" name="mobile" required>
                     <button type="submit" class="btn btn-primary btn-block">ارسال</button>
                 </form>
             </div>

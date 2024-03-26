@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 function zibal_output($vars)
 {
@@ -7,6 +8,14 @@ function zibal_output($vars)
 
 function zibal_clientarea($vars)
 {
+    $userid = json_decode($_SESSION['login_auth_tk'])->id;
+
+    $checkUserAuth = Capsule::table('zibal_users')->where('user_id', $userid)->first();
+    if ($checkUserAuth) return '';
+
+//    $vars['birthday'] = true;
+    $vars['birthday'] = Capsule::table('zibal_settings')->where('key', 'nationalIdentityInquiry')->first();
+    $vars['mobile'] = '';
     include __DIR__  . '/src/router/loader.php';
     return array(
         'pagetitle' => 'احراز هویت',
