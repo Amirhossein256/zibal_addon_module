@@ -5,9 +5,15 @@ function zibal_output($vars)
     include __DIR__  . '/src/router/loader.php';
 }
 
-function zibal_clientarea()
+function zibal_clientarea($vars)
 {
-
+    return array(
+        'pagetitle' => 'احراز هویت',
+        'breadcrumb' => array('index.php?m=zibal' => 'احراز هویت'),
+        'templatefile' => 'zibal.tpl',
+        'requirelogin' => true,
+        'vars' => $vars
+    );
 }
 
 function zibal_config()
