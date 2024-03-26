@@ -7,11 +7,13 @@ function zibal_output($vars)
 
 function zibal_clientarea($vars)
 {
+    include __DIR__  . '/src/router/loader.php';
     return array(
         'pagetitle' => 'احراز هویت',
         'breadcrumb' => array('index.php?m=zibal' => 'احراز هویت'),
         'templatefile' => 'zibal.tpl',
-        'requirelogin' => true,
+        'requirelogin' => false,
+        'forcessl' => false,
         'vars' => $vars
     );
 }

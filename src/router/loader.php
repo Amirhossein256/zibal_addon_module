@@ -2,8 +2,13 @@
 
 define('BASE_URL', '/modules/addons/zibal/');
 define('MODULE_URL', $vars['modulelink']);
-$action = (isset($_GET['action'])) ? $_GET['action'] : 'main/index';
-
+if (isset($_GET['action'])){
+    $action = $_GET['action'];
+}elseif (isset($_GET['a'])){
+    $action = $_GET['a'];
+}else{
+    $action = 'main/index';
+}
 list($controller, $method) = explode('/', $action);
 $controller = trim($controller);
 $method = trim($method);
