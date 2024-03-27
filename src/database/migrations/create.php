@@ -22,6 +22,7 @@ class create
         if (!Capsule::schema()->hasTable('zibal_users')) {
             Capsule::schema()->create('zibal_users', function ($table) {
                 /** @var \Illuminate\Database\Schema\Blueprint $table */
+                $table->integer('user_id');
                 $table->string('full_name');
                 $table->string('national_code')->nullable();
                 $table->string('mobile');
