@@ -7,6 +7,7 @@ class authentication extends mainController
 {
     public function authenticate()
     {
+        //todo
         $authService = Capsule::table('zibal_settings')->where('key', 'authService')->first();
         if ($authService->value == 'shahkarInquiry') {
             $national_id = $_POST['national_id'];
