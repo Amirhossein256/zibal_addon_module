@@ -44,4 +44,40 @@
 </nav>
 <hr>
 <h1 class="text-center">ماژول احراز هویت کاربران</h1>
+<style>
+    .small-box {
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        margin-bottom: 20px;
+        overflow: hidden;
+        width: 33%; /* اندازه عرض */
+        background-color: #f8f9fa; /* رنگ پس‌زمینه قسمت اصلی */
+        direction: rtl !important;
+        text-align: right !important;
+    }
+
+    .small-box .inner {
+        padding: 8px; /* فاصله داخلی */
+        text-align: center;
+
+    }
+
+    .small-box h3 {
+        margin-top: 0;
+        font-size: 18px; /* اندازه فونت */
+    }
+
+    .small-box p {
+        margin-bottom: 0;
+        font-size: 14px; /* اندازه فونت */
+    }
+
+</style>
+<div class="small-box bg-success-gradient">
+    <div class="inner center-aline text-center">
+        <h3><?php echo $userCount?></h3>
+        <p>تعداد کاربران احراز هویت شده</p>
+    </div>
+</div>
 
