@@ -8,14 +8,23 @@ function zibal_output($vars)
 
 function zibal_clientarea($vars)
 {
-    $userid = json_decode($_SESSION['login_auth_tk'])->id;
-
-    $checkUserAuth = Capsule::table('zibal_users')->where('user_id', $userid)->first();
-    if ($checkUserAuth) return '';
-
-//    $vars['birthday'] = true;
-    $vars['birthday'] = Capsule::table('zibal_settings')->where('key', 'nationalIdentityInquiry')->first();
-    $vars['mobile'] = '';
+    $user = json_decode($_SESSION['login_auth_tk']);
+    $postData = array(
+        'email' => $user->email,
+        'stats' => true,
+    );
+    $results = localAPI('GetClientsDetails', $postData);
+    $mobile = $results['client']['phonenumber'];
+    $checkUserAuth = Capsule::table('zibal_users')->where('user_id', $user->id)->first();
+    $currentUser = new \WHMCS\Authentication\CurrentUser;
+    if ($checkUserAuth or !$currentUser->isAuthenticatedUser()) return '';
+    $userContact = Capsule::table('tblcontacts')->where('userid', $user->id)->first();
+    $authService = Capsule::table('zibal_settings')->where('key', 'authService')->first();
+    $data = [
+        'authService' => $authService->value == 'nationalIdentityInquiry',
+        'mobile' => $mobile,
+        'userid' => $user->id,
+    ];
     include __DIR__  . '/src/router/loader.php';
     return array(
         'pagetitle' => 'احراز هویت',
@@ -23,8 +32,8 @@ function zibal_clientarea($vars)
         'templatefile' => 'zibal.tpl',
         'requirelogin' => false,
         'forcessl' => false,
-        'vars' => $vars
-    );
+        'vars' => $data
+        );
 }
 
 function zibal_config()
