@@ -14,6 +14,8 @@ $controller = trim($controller);
 $method = trim($method);
 ($controller == "") ? $controller = "main" : $controller;
 ($method == '') ? $method = "index" : $method;
+require_once __DIR__ . "/../Clients/AbstractApiClient.php";
+require_once __DIR__ . "/../Clients/ZibalApi.php";
 require_once __DIR__ . "/../controller/mainController.php";
 require_once __DIR__ . "/../controller/" . $controller . '.php';
 
