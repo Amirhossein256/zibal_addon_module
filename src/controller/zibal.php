@@ -20,4 +20,10 @@ class zibal extends mainController
     {
         return Capsule::table('zibal_settings')->pluck('value', 'key');
     }
+
+    public function user()
+    {
+        $user = Capsule::table('zibal_users')->orderBy('created_at')->get()->toArray();
+        $this->render('user', ['user' => $user]);
+    }
 }
