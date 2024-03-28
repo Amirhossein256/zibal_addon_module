@@ -8,7 +8,7 @@ class authentication extends mainController
     public function authenticate()
     {
         $authService = Capsule::table('zibal_settings')->where('key', 'authService')->first();
-        if ($authService == 'shahkarInquiry') {
+        if ($authService->value == 'shahkarInquiry') {
             $national_id = $_POST['national_id'];
             $mobile = $_POST['mobile'];
             if (isset($mobile) && isset($national_id)) {

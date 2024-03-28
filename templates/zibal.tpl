@@ -46,8 +46,7 @@
                             <label for="national_id">کد ملی</label>
                             <input type="text" class="form-control text-right" id="national_id" name="national_id" required>
                         </div>
-                        <input value="{{$mobile}}" type="hidden" class="form-control" id="mobile" name="mobile"
-                               required>
+                        <input value="{{$mobile}}" type="hidden" class="form-control" id="mobile" name="mobile" required>
                         <button type="submit" class="btn btn-primary btn-block">ارسال</button>
                     </form>
                 </div>
