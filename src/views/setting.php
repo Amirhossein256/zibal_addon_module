@@ -7,19 +7,11 @@
     <div class="row">
         <div class="col-md-9">
             <div class="col-md-10">
-
-
                 <div class="form-check form-check-inline">
-                    <input <?php  if($setting['shahkarInquiry'] == 'on') { echo 'checked';}?> class="form-check-input" type="radio" name="shahkarInquiry" value="on">
-                    <label class="form-check-label">فعال</label>
+                    <input <?php  if($setting['authService'] == 'shahkarInquiry') { echo 'checked';}?> class="form-check-input" type="radio" name="authService" value="shahkarInquiry">
+                    <label class="form-check-label"> شاهکار</label>
                 </div>
                 <hr>
-                <div class="form-check form-check-inline">
-                    <input <?php  if($setting['nationalIdentityInquiry'] == 'on') { echo 'checked';}?> class="form-check-input" type="radio" name="nationalIdentityInquiry" value="on">
-                    <label class="form-check-label">فعال</label>
-                </div>
-                <hr>
-
             <div class="form-check form-check-inline">
                 <input <?php  if($setting['AfterLogin'] == 'on') { echo 'checked';}?> class="form-check-input" type="radio" name="AfterLogin" value="on">
                 <label class="form-check-label">فعال</label>
@@ -27,7 +19,7 @@
                 <hr>
 
             <div class="form-check form-check-inline">
-                <input <?php  if($setting['BeforeRegister'] == 'on') { echo 'checked';}?> class="form-check-input" type="radio" name="BeforeRegister" value="on">
+                <input disabled <?php  if($setting['BeforeRegister'] == 'on') { echo 'checked';}?> class="form-check-input" type="radio" name="BeforeRegister" value="on">
                 <label class="form-check-label">فعال</label>
             </div>
             </div>
@@ -35,13 +27,8 @@
             <div class="col-md-2">
 
                 <div class="form-check form-check-inline">
-                    <input <?php  if($setting['shahkarInquiry'] == 'off') { echo 'checked';}?> class="form-check-input" type="radio" name="shahkarInquiry" value="off">
-                    <label class="form-check-label">غیر فعال</label>
-                </div>
-                <hr>
-                <div class="form-check form-check-inline">
-                    <input <?php  if($setting['nationalIdentityInquiry'] == 'off') { echo 'checked';}?> class="form-check-input" type="radio" name="nationalIdentityInquiry" value="off">
-                    <label class="form-check-label">غیر فعال</label>
+                    <input <?php  if($setting['authService'] == 'nationalIdentityInquiry') { echo 'checked';}?> class="form-check-input" type="radio" name="authService" value="nationalIdentityInquiry">
+                    <label class="form-check-label"> اطلاعات هویتی</label>
                 </div>
                 <hr>
                 <div class="form-check form-check-inline">
@@ -50,30 +37,24 @@
                 </div>
                 <hr>
                 <div class="form-check form-check-inline">
-                    <input <?php  if($setting['BeforeRegister'] == 'off') { echo 'checked';}?> class="form-check-input" type="radio" name="BeforeRegister" value="off">
+                    <input disabled <?php  if($setting['BeforeRegister'] == 'off') { echo 'checked';}?> class="form-check-input" type="radio" name="BeforeRegister" value="off">
                     <label class="form-check-label">غیر فعال</label>
                 </div>
             </div>
-
-
         </div>
         <div class="col-md-3">
 
 
             <label for="">
-                سرویس شاهکار
-            </label>
-            <hr>
-            <label for="">
-                سرویس اطلاعات هویتی
-            </label>
-            <hr>
-            <label for="">
-                فعال شدن افزونه پیش از ثبت نام
+                نوع احراز هویت
             </label>
             <hr>
             <label for="">
                 بررسی احراز هویت کاربر بعد از ورود
+            </label>
+            <hr>
+            <label for="">
+                فعال شدن افزونه پیش از ثبت نام
             </label>
         </div>
 
